@@ -82,11 +82,38 @@
             .grid{ grid-template-columns: 1fr; }
             .image-wrap img{ width:180px; height:270px; }
         }
+
+        /* estilo simple para el menú de enlaces a los ejercicios */
+        nav ul{
+            list-style:none;
+            padding:0;
+            margin:10px 0 20px 0;
+            display:flex;
+            gap:12px;
+        }
+        nav a{
+            display:inline-block;
+            padding:8px 12px;
+            background:#007acc;
+            color:#fff;
+            text-decoration:none;
+            border-radius:4px;
+        }
+        nav a:hover{ background:#005a9e; }
     </style>
 </head>
 <body>
     <header>
         <h1>HACER TRES HTML PARA QUE APAREZCA LA INFORMACIÓN SIGUIENTE</h1>
+
+        <!-- Menú con enlaces a cada ejercicio -->
+        <nav aria-label="Enlaces a ejercicios">
+            <ul>
+                <li><a href="ejercicio1.html" target="_blank">Ejercicio 1</a></li>
+                <li><a href="ejercicio2.html" target="_blank">Ejercicio 2</a></li>
+                <li><a href="ejercicio3.html" target="_blank">Ejercicio 3</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="grid">
