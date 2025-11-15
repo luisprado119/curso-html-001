@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>1era Practica - Tres ejercicios</title>
+    <style>
+        :root{
+            --gap: 30px;
+            --green: #7fc24f;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+            background: #fff;
+            color: #111;
+        }
+        header{
+            margin-bottom: 20px;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--gap);
+            align-items: start;
+        }
+
+        .panel{
+            padding: 20px;
+        }
+
+        /* 1 - tabla pequeña */
+        .panel.table-panel table{
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .panel.table-panel th,
+        .panel.table-panel td{
+            padding: 6px 10px;
+            text-align: left;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .panel.table-panel h2{ text-align: center; }
+
+        /* 2 - informe con título y lista */
+        .card{
+            border: 1px solid #e0e0e0;
+            padding: 22px;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+            background: #fff;
+        }
+        .card h1{ margin: 0 0 10px; font-size: 28px; }
+        .card h3{ margin: 10px 0; }
+
+        /* 3 - imagen con enlace y recuadro de instrucciones */
+        .image-wrap{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+        .image-wrap img{
+            display:block;
+            width:200px;
+            height:300px;
+            object-fit:cover;
+            border: 1px solid #ddd;
+        }
+
+        /* recuadro de instrucciones (estilo de la imagen que mostraste) */
+        .instructions{
+            margin-top: 18px;
+            background: var(--green);
+            color: #fff;
+            padding: 14px;
+            border-radius: 4px;
+            line-height: 1.4;
+            max-width: 100%;
+        }
+
+        /* responsive: pasar a una columna en pantallas pequeñas */
+        @media (max-width: 800px){
+            .grid{ grid-template-columns: 1fr; }
+            .image-wrap img{ width:180px; height:270px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HACER TRES HTML PARA QUE APAREZCA LA INFORMACIÓN SIGUIENTE</h1>
+    </header>
+
+    <main class="grid">
+        <!-- 1 -->
+        <section class="panel table-panel" aria-label="Ejercicio 1">
+            <h2>1</h2>
+            <table aria-describedby="desc-ej1">
+                <thead>
+                    <tr>
+                        <th>factura</th>
+                        <th>fecha</th>
+                        <th>importe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>1/1/2022</td><td>156.88</td></tr>
+                    <tr><td>2</td><td>2/2/2022</td><td>168.99</td></tr>
+                </tbody>
+            </table>
+            <p id="desc-ej1" style="margin-top:10px;color:#666;font-size:13px;">
+                Ejercicio 1: crea una tabla con &lt;table&gt;, filas (&lt;tr&gt;) y celdas (&lt;th&gt; / &lt;td&gt;).
+            </p>
+        </section>
+
+        <!-- 2 -->
+        <section class="panel" aria-label="Ejercicio 2">
+            <h2 style="text-align:center;">2</h2>
+            <div class="card" role="article">
+                <h1>Informe sobre facturas</h1>
+                <h3>Mes de mayo</h3>
+                <ul>
+                    <li>España</li>
+                    <li>Francia</li>
+                    <li>Alemania</li>
+                </ul>
+            </div>
+            <p style="margin-top:10px;color:#666;font-size:13px;">
+                Ejercicio 2: usa &lt;h1&gt; / &lt;h3&gt; para títulos y &lt;ul&gt; con &lt;li&gt; para listas.
+            </p>
+        </section>
+
+        <!-- 3 -->
+        <section class="panel image-panel" aria-label="Ejercicio 3">
+            <h2 style="text-align:center;">3</h2>
+            <div class="image-wrap">
+                <a href="https://www.google.com" target="_blank" title="Ir a Google">
+                    <img src="https://picsum.photos/id/237/200/300"
+                         alt="Perro negro sobre tabla de madera"
+                         title="Título cuando pasemos el ratón por encima"/>
+                </a>
+
+                <div class="instructions" role="note">
+                    url imagen: https://picsum.photos/id/237/200/300<br/>
+                    url cuando pinchemos: https://www.google.com<br/>
+                    Título al pasar el ratón: "Título cuando pasemos el ratón por encima"<br/>
+                    Ejercicio 3: envuelve la imagen en un &lt;a&gt; y añade atributo title para el mensaje al pasar el ratón.
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
